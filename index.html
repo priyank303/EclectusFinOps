@@ -39,10 +39,43 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero" aria-label="Hero section">
-    <div class="hero__bg">
+    <div class="hero__bg" data-parallax="0.22">
       <img src="hero_bg.png" alt="" role="presentation" fetchpriority="high" />
       <div class="hero__bg-overlay"></div>
     </div>
+
+    <!-- Parallax SVG Constellation Background -->
+    <div class="section__parallax-bg" data-parallax="0.12" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="heroLineGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8b5a14" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#059669" stop-opacity="0.2"/>
+          </linearGradient>
+        </defs>
+        <path d="M-100 620 Q 350 440, 720 530 T 1540 360" stroke="url(#heroLineGrad)" stroke-width="1.5" stroke-dasharray="4 6"/>
+        <path d="M-50 380 Q 450 260, 900 340 T 1520 200" stroke="url(#heroLineGrad)" stroke-width="1.2"/>
+        <circle cx="350" cy="440" r="5" fill="#8b5a14" opacity="0.35"/>
+        <circle cx="720" cy="530" r="6" fill="#059669" opacity="0.4"/>
+        <circle cx="900" cy="340" r="5" fill="#8b5a14" opacity="0.35"/>
+        <circle cx="1250" cy="410" r="6" fill="#059669" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chips -->
+    <div class="parallax-element hero__chip hero__chip--1" data-parallax="-0.22" aria-hidden="true">
+      <span class="chip-pulse chip-pulse--emerald"></span>
+      <span class="chip-text">Peppol BIS 3.0 Verified</span>
+    </div>
+    <div class="parallax-element hero__chip hero__chip--2" data-parallax="-0.32" aria-hidden="true">
+      <span class="chip-icon">⚡</span>
+      <span class="chip-text">AI 3-Way Match Active</span>
+    </div>
+    <div class="parallax-element hero__chip hero__chip--3" data-parallax="-0.18" aria-hidden="true">
+      <span class="chip-icon">🛡️</span>
+      <span class="chip-text">Zero-Touch VAT Ingestion</span>
+    </div>
+
     <div class="hero__particles" id="heroParticles" aria-hidden="true"></div>
     <div class="hero__content">
       <div class="hero__badge">
@@ -119,6 +152,23 @@
 
   <!-- ===== 2029 CLIFF SECTION ===== -->
   <section class="section section--alt" id="cliff" aria-labelledby="cliff-heading">
+    <!-- Parallax Background Layer -->
+    <div class="section__parallax-bg" data-parallax="0.14" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="xMidYMid slice">
+        <circle cx="1120" cy="350" r="280" stroke="#8b5a14" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="6 8"/>
+        <circle cx="1120" cy="350" r="180" stroke="#8b5a14" stroke-width="1.2" stroke-opacity="0.16"/>
+        <circle cx="1120" cy="350" r="80" stroke="#059669" stroke-width="1.5" stroke-opacity="0.22"/>
+        <line x1="840" y1="350" x2="1400" y2="350" stroke="#8b5a14" stroke-width="1" stroke-opacity="0.12"/>
+        <line x1="1120" y1="70" x2="1120" y2="630" stroke="#8b5a14" stroke-width="1" stroke-opacity="0.12"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chip -->
+    <div class="parallax-element section__chip cliff__chip" data-parallax="-0.25" aria-hidden="true">
+      <span class="chip-icon">⏳</span>
+      <span class="chip-text">Mandate Clock · Spring 2027 Standards</span>
+    </div>
+
     <div class="container">
       <div class="section__eyebrow">The Challenge</div>
       <div class="cliff__layout">
@@ -155,6 +205,23 @@
 
   <!-- ===== METHODOLOGY ===== -->
   <section class="section" id="methodology" aria-labelledby="methodology-heading">
+    <!-- Parallax Background Layer -->
+    <div class="section__parallax-bg" data-parallax="0.12" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="xMidYMid slice">
+        <path d="M100 200 C 420 140, 620 360, 1340 240" stroke="#8b5a14" stroke-width="1.5" stroke-opacity="0.14" stroke-dasharray="5 5"/>
+        <path d="M100 660 C 520 540, 820 720, 1340 570" stroke="#059669" stroke-width="1.5" stroke-opacity="0.14" stroke-dasharray="5 5"/>
+        <circle cx="360" cy="210" r="5" fill="#8b5a14" opacity="0.35"/>
+        <circle cx="740" cy="280" r="6" fill="#059669" opacity="0.4"/>
+        <circle cx="1060" cy="225" r="5" fill="#8b5a14" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chip -->
+    <div class="parallax-element section__chip methodology__chip" data-parallax="-0.22" aria-hidden="true">
+      <span class="chip-pulse chip-pulse--gold"></span>
+      <span class="chip-text">EAO Framework · Eliminate · Automate · Optimize</span>
+    </div>
+
     <div class="container">
       <div class="section__eyebrow">Our Approach</div>
       <h2 class="section__heading section__heading--center" id="methodology-heading">The Co-Building Methodology:<br/><em>The P2P & O2C Partnership</em></h2>
@@ -275,6 +342,27 @@
 
   <!-- ===== SIMBA DEMO (AMAZON CASE STUDY) ===== -->
   <section class="section" id="simba" aria-labelledby="simba-heading">
+    <!-- Parallax Background Layer -->
+    <div class="section__parallax-bg" data-parallax="0.14" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+        <path d="M150 100 L1290 100 M150 300 L1290 300 M150 500 L1290 500 M150 700 L1290 700" stroke="#cbd5e1" stroke-width="1" stroke-opacity="0.35"/>
+        <path d="M250 50 L250 850 M550 50 L550 850 M850 50 L850 850 M1150 50 L1150 850" stroke="#cbd5e1" stroke-width="1" stroke-opacity="0.35"/>
+        <circle cx="550" cy="300" r="7" fill="#8b5a14" opacity="0.35"/>
+        <circle cx="850" cy="500" r="7" fill="#059669" opacity="0.35"/>
+        <circle cx="1150" cy="300" r="6" fill="#8b5a14" opacity="0.25"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chips -->
+    <div class="parallax-element section__chip simba__chip simba__chip--left" data-parallax="-0.26" aria-hidden="true">
+      <span class="chip-icon">⚡</span>
+      <span class="chip-text">Policy Matrix: Sub-Minute Rule Propagation</span>
+    </div>
+    <div class="parallax-element section__chip simba__chip--right" data-parallax="-0.2" aria-hidden="true">
+      <span class="chip-pulse chip-pulse--emerald"></span>
+      <span class="chip-text">Unified P2P &amp; O2C Pipeline</span>
+    </div>
+
     <div class="container">
       <div class="section__eyebrow">Enterprise Innovation · Amazon Case Study</div>
       <h2 class="section__heading section__heading--center" id="simba-heading">
@@ -499,6 +587,20 @@
 
   <!-- ===== PRACTITIONER ===== -->
   <section class="section section--alt" id="practitioner" aria-labelledby="practitioner-heading">
+    <!-- Parallax Background Layer -->
+    <div class="section__parallax-bg" data-parallax="0.16" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="xMidYMid slice">
+        <path d="M1220 120 L1360 120 M1220 120 L1220 440 L1360 440 M1220 280 L1320 280" stroke="#8b5a14" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.07"/>
+        <circle cx="180" cy="220" r="160" stroke="#059669" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="4 6"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chip -->
+    <div class="parallax-element section__chip practitioner__chip" data-parallax="-0.24" aria-hidden="true">
+      <span class="chip-icon">🏆</span>
+      <span class="chip-text">22+ Years Enterprise FinTech · Barclays &amp; Amazon</span>
+    </div>
+
     <div class="container">
       <div class="section__eyebrow">The Founder</div>
       <div class="practitioner__layout">
@@ -597,6 +699,20 @@
 
   <!-- ===== AUDIT / CTA ===== -->
   <section class="section section--cta" id="audit" aria-labelledby="audit-heading">
+    <!-- Parallax Background Layer -->
+    <div class="section__parallax-bg" data-parallax="0.12" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="xMidYMid slice">
+        <circle cx="720" cy="300" r="320" stroke="#8b5a14" stroke-width="1" stroke-opacity="0.1" stroke-dasharray="8 8"/>
+        <circle cx="720" cy="300" r="220" stroke="#059669" stroke-width="1" stroke-opacity="0.12"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chip -->
+    <div class="parallax-element section__chip audit__chip" data-parallax="-0.22" aria-hidden="true">
+      <span class="chip-icon">📋</span>
+      <span class="chip-text">Fixed-Scope Diagnostic · No Open-Ended Fees</span>
+    </div>
+
     <div class="container">
       <div class="audit__card">
         <div class="audit__badge">Fixed-Scope Engagement</div>
@@ -639,6 +755,21 @@
 
   <!-- ===== CONTACT ===== -->
   <section class="section" id="contact" aria-labelledby="contact-heading">
+    <!-- Parallax Background Layer -->
+    <div class="section__parallax-bg" data-parallax="0.1" aria-hidden="true">
+      <svg class="parallax-svg" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="xMidYMid slice">
+        <path d="M0 600 Q 360 480, 720 560 T 1440 450" stroke="#8b5a14" stroke-width="1.5" stroke-opacity="0.1"/>
+        <circle cx="260" cy="510" r="5" fill="#8b5a14" opacity="0.3"/>
+        <circle cx="1180" cy="480" r="5" fill="#059669" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <!-- Floating Parallax Chip -->
+    <div class="parallax-element section__chip contact__chip" data-parallax="-0.18" aria-hidden="true">
+      <span class="chip-pulse chip-pulse--emerald"></span>
+      <span class="chip-text">Direct Practitioner Response within 1 Business Day</span>
+    </div>
+
     <div class="container">
       <div class="section__eyebrow">Get In Touch</div>
       <h2 class="section__heading section__heading--center" id="contact-heading">Start Your<br/><em>Collaborative Diagnostic</em></h2>

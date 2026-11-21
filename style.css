@@ -82,6 +82,8 @@ input, textarea, select { font: inherit; }
 
 /* ---- UTILITY ---- */
 .container {
+  position: relative;
+  z-index: 2;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-pad);
@@ -254,8 +256,12 @@ input, textarea, select { font: inherit; }
 
 .hero__bg {
   position: absolute;
-  inset: 0;
+  top: -15%;
+  left: 0;
+  right: 0;
+  height: 130%;
   z-index: 0;
+  will-change: transform;
 }
 .hero__bg img {
   width: 100%;
@@ -469,6 +475,8 @@ input, textarea, select { font: inherit; }
 
 /* ---- SECTIONS ---- */
 .section {
+  position: relative;
+  overflow: hidden;
   padding: var(--space-2xl) 0;
 }
 .section--alt {
@@ -1517,6 +1525,125 @@ input, textarea, select { font: inherit; }
   color: var(--clr-text-secondary);
 }
 
+/* ---- PARALLAX & GRAPHIC LAYERS ---- */
+.section__parallax-bg {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  right: 0;
+  height: 130%;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.parallax-svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+/* Floating Parallax Chips & Badges */
+.parallax-element {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  will-change: transform;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: hsla(0, 0%, 100%, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 4px 16px hsla(215, 20%, 50%, 0.12);
+  border-radius: 100px;
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--clr-text-primary);
+  user-select: none;
+}
+
+/* Pulse indicators */
+.chip-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+.chip-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  opacity: 0.6;
+  animation: chipPulseAnim 2s infinite ease-out;
+}
+.chip-pulse--emerald { background: var(--clr-emerald); color: var(--clr-emerald); }
+.chip-pulse--gold { background: var(--clr-gold); color: var(--clr-gold); }
+
+@keyframes chipPulseAnim {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.chip-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Hero Chips */
+.hero__chip--1 {
+  top: 18%;
+  right: 5%;
+}
+.hero__chip--2 {
+  top: 50%;
+  left: 4%;
+}
+.hero__chip--3 {
+  bottom: 14%;
+  right: 8%;
+}
+
+/* Section Specific Chips */
+.cliff__chip {
+  top: 8%;
+  right: 8%;
+}
+
+.methodology__chip {
+  top: 6%;
+  right: 6%;
+}
+
+.simba__chip--left {
+  top: 8%;
+  left: 6%;
+}
+.simba__chip--right {
+  top: 10%;
+  right: 6%;
+}
+
+.practitioner__chip {
+  bottom: 8%;
+  left: 8%;
+}
+
+.audit__chip {
+  top: 6%;
+  right: 8%;
+}
+
+.contact__chip {
+  top: 6%;
+  left: 8%;
+}
+
 /* ---- PARTICLE ---- */
 .particle {
   position: absolute;
@@ -1533,6 +1660,10 @@ input, textarea, select { font: inherit; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 1024px) {
+  .hero__chip--2 { display: none; }
+  .simba__chip--left { display: none; }
+  .parallax-element { font-size: 0.72rem; padding: 0.35rem 0.8rem; }
+
   .cliff__layout           { grid-template-columns: 1fr; gap: 3rem; }
   .methodology__framework  { grid-template-columns: 1fr; }
   .simba__architecture-grid{ grid-template-columns: 1fr; }
@@ -1546,6 +1677,13 @@ input, textarea, select { font: inherit; }
 
 @media (max-width: 768px) {
   :root { --space-2xl: 4.5rem; }
+
+  .hero__chip--1, .hero__chip--2, .hero__chip--3,
+  .cliff__chip, .methodology__chip,
+  .simba__chip--left, .simba__chip--right,
+  .practitioner__chip, .audit__chip, .contact__chip {
+    display: none;
+  }
 
   .nav__menu {
     display: none;

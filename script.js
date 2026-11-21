@@ -264,4 +264,39 @@
 
   sections.forEach(s => activeObserver.observe(s));
 
+  // ---- SMOOTH PARALLAX SCROLLING ENGINE ----
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+  if (parallaxElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let isTicking = false;
+
+    const onScrollParallax = () => {
+      const windowH = window.innerHeight;
+
+      parallaxElements.forEach((el) => {
+        const speed = parseFloat(el.getAttribute('data-parallax') || '0.15');
+        const parent = el.closest('section') || el.parentElement;
+        const rect = parent.getBoundingClientRect();
+
+        // Only calculate when section is visible or nearby
+        if (rect.top < windowH && rect.bottom > 0) {
+          const centerDelta = (rect.top + rect.height / 2) - (windowH / 2);
+          const yPos = centerDelta * speed;
+          el.style.transform = `translate3d(0, ${yPos.toFixed(1)}px, 0)`;
+        }
+      });
+      isTicking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(onScrollParallax);
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    // Initial call
+    onScrollParallax();
+  }
+
 })();
