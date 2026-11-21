@@ -29,6 +29,7 @@
       <ul class="nav__menu" id="navMenu" role="menubar">
         <li role="none"><a href="#cliff" role="menuitem" class="nav__link">The 2029 Mandate</a></li>
         <li role="none"><a href="#methodology" role="menuitem" class="nav__link">Methodology</a></li>
+        <li role="none"><a href="#simba" role="menuitem" class="nav__link">Simba Demo</a></li>
         <li role="none"><a href="#practitioner" role="menuitem" class="nav__link">The Practitioner</a></li>
         <li role="none"><a href="#audit" role="menuitem" class="nav__link">Audit</a></li>
         <li role="none"><a href="#contact" role="menuitem" class="nav__link nav__link--cta">Get In Touch</a></li>
@@ -267,6 +268,230 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <span>Peppol Compliant · VAT Accelerated · Cash Flow Improved</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SIMBA DEMO (AMAZON CASE STUDY) ===== -->
+  <section class="section" id="simba" aria-labelledby="simba-heading">
+    <div class="container">
+      <div class="section__eyebrow">Enterprise Innovation · Amazon Case Study</div>
+      <h2 class="section__heading section__heading--center" id="simba-heading">
+        Project Simba:<br/><em>From Monolithic Code to a Configurable Engine</em>
+      </h2>
+      <p class="section__lead section__lead--center">
+        At Amazon, Priyank architected the transition from legacy, hardcoded monolithic finance systems to <strong>Simba</strong> — a modular, configurable engine serving both <strong>Accounts Payable (P2P)</strong> and <strong>Accounts Receivable (O2C)</strong>.
+      </p>
+
+      <!-- Key Concept Cards -->
+      <div class="simba__architecture-grid">
+        <div class="simba__card simba__card--legacy">
+          <div class="simba__card-badge">Legacy Monolithic Approach</div>
+          <h3 class="simba__card-title">Hardcoded Logic & Fragile Deployments</h3>
+          <p class="simba__card-desc">
+            Tax rates, invoice validation, and accounting treatment were embedded directly inside monolithic backend code. Every statutory update required engineering cycles and extensive regression testing.
+          </p>
+          <ul class="simba__card-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span><strong>3–6 Month Release Cycles:</strong> Code changes gated behind quarterly sprint freezes</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span><strong>Fragmented Logic:</strong> Payables (P2P) and Receivables (O2C) operated on divergent rule sets</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span><strong>VAT Leakage Risk:</strong> Delayed rollouts caused retroactive tax remediation and penalties</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="simba__card simba__card--simba">
+          <div class="simba__card-badge simba__card-badge--gold">Simba Configurable Platform</div>
+          <h3 class="simba__card-title">Policy-Driven Configurable Architecture</h3>
+          <p class="simba__card-desc">
+            Decoupled tax rules, statutory mandates, and invoice matching logic from core code into a high-performance, configurable policy engine across 80+ jurisdictions.
+          </p>
+          <ul class="simba__card-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Near Instantaneous Updates (&lt; 60s):</strong> Finance teams configure rules without code deployments</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Unified P2P & O2C Synchronization:</strong> Single source of truth for all supplier and customer tax flows</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Point-of-Injection Validation:</strong> Over $50M in historical VAT leakage eradicated</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Live Interactive Demo: VAT Rate Change Impact -->
+      <div class="simba__demo-box" id="simbaDemoBox">
+        <div class="simba__demo-header">
+          <div>
+            <div class="simba__demo-tag">Interactive Simulation</div>
+            <h3 class="simba__demo-title">Simulate a Statutory VAT Rate Change</h3>
+            <p class="simba__demo-subtitle">See how a regulatory VAT rate adjustment ripples through the legacy monolithic system versus the Simba configurable engine.</p>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="simba__controls">
+          <div class="simba__control-group">
+            <label class="simba__control-label">Financial Workflow Stream</label>
+            <div class="simba__pill-selector" id="simbaModuleSelector" role="group" aria-label="Select financial workflow stream">
+              <button type="button" class="simba__pill active" data-module="p2p">Payables (P2P Supplier Invoicing)</button>
+              <button type="button" class="simba__pill" data-module="o2c">Receivables (O2C Customer Billing)</button>
+            </div>
+          </div>
+
+          <div class="simba__control-group">
+            <label class="simba__control-label" for="simbaScenario">Jurisdiction &amp; Rate Scenario</label>
+            <select class="form__input form__select" id="simbaScenario">
+              <option value="uk_increase">United Kingdom: Standard VAT Increase (20% → 21%)</option>
+              <option value="de_stimulus">Germany: Temporary VAT Stimulus Cut (19% → 16%)</option>
+              <option value="fr_reclass">France: Services Reclassification (20% → 10%)</option>
+              <option value="custom">Custom VAT Rate Scenario</option>
+            </select>
+          </div>
+
+          <div class="simba__control-group" id="customRateGroup" style="display: none;">
+            <label class="simba__control-label" for="simbaCustomRate">Custom Target Rate (%)</label>
+            <input class="form__input" type="number" id="simbaCustomRate" value="22" min="0" max="100" step="0.5" />
+          </div>
+        </div>
+
+        <!-- Simulation Comparison Panels -->
+        <div class="simba__sim-grid">
+          <!-- Monolithic Impact Panel -->
+          <div class="simba__sim-panel simba__sim-panel--monolith">
+            <div class="simba__sim-header">
+              <span class="simba__sim-icon simba__sim-icon--warn">⚠️</span>
+              <div>
+                <h4 class="simba__sim-title">Monolithic Architecture</h4>
+                <div class="simba__sim-sub">Hardcoded Codebase & Deployment Pipeline</div>
+              </div>
+            </div>
+
+            <div class="simba__metric-row">
+              <div class="simba__metric-item">
+                <span class="simba__metric-val" id="monoTime">12–16 wks</span>
+                <span class="simba__metric-lbl">Lead Time to Go-Live</span>
+              </div>
+              <div class="simba__metric-item">
+                <span class="simba__metric-val" id="monoEffort">80+ hrs</span>
+                <span class="simba__metric-lbl">Engineering Sprints & QA</span>
+              </div>
+            </div>
+
+            <div class="simba__pipeline">
+              <div class="simba__step simba__step--delayed">
+                <span class="simba__step-dot"></span>
+                <div class="simba__step-text">
+                  <strong>1. Code PR & Code Freeze</strong>
+                  <p>Software engineers patch hardcoded tax tables in 14 microservices</p>
+                </div>
+              </div>
+              <div class="simba__step simba__step--delayed">
+                <span class="simba__step-dot"></span>
+                <div class="simba__step-text">
+                  <strong>2. Full Regression Testing</strong>
+                  <p>Risk of breaking existing P2P three-way matching or O2C billing batches</p>
+                </div>
+              </div>
+              <div class="simba__step simba__step--risk">
+                <span class="simba__step-dot"></span>
+                <div class="simba__step-text">
+                  <strong>3. Invoices On Hold & Compliance Risk</strong>
+                  <p id="monoRiskNote">Suppliers submit invoices with new rate; system rejects them or creates tax mismatch</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="simba__status-badge simba__status-badge--danger" id="monoStatusBadge">
+              Status: Engineering Deployment Required · 14 Services Impacted
+            </div>
+          </div>
+
+          <!-- Simba Configurable Engine Panel -->
+          <div class="simba__sim-panel simba__sim-panel--simba">
+            <div class="simba__sim-header">
+              <span class="simba__sim-icon simba__sim-icon--success">⚡</span>
+              <div>
+                <h4 class="simba__sim-title">Simba Configurable Engine</h4>
+                <div class="simba__sim-sub">Policy-Driven Dynamic Validation Platform</div>
+              </div>
+            </div>
+
+            <div class="simba__metric-row">
+              <div class="simba__metric-item">
+                <span class="simba__metric-val simba__metric-val--highlight" id="simbaTime">&lt; 60 secs</span>
+                <span class="simba__metric-lbl">Lead Time to Go-Live</span>
+              </div>
+              <div class="simba__metric-item">
+                <span class="simba__metric-val simba__metric-val--highlight" id="simbaEffort">0 hrs</span>
+                <span class="simba__metric-lbl">Dev Sprints / Zero Code Changes</span>
+              </div>
+            </div>
+
+            <!-- Live Calculation Preview -->
+            <div class="simba__calc-preview">
+              <div class="simba__calc-title">Live Transaction Simulation</div>
+              <div class="simba__calc-row">
+                <span>Sample Transaction Net:</span>
+                <strong id="calcBase">£10,000.00</strong>
+              </div>
+              <div class="simba__calc-row">
+                <span>Original VAT (<span id="calcOldRateLabel">20%</span>):</span>
+                <span id="calcOldVat">£2,000.00</span>
+              </div>
+              <div class="simba__calc-row simba__calc-row--highlight">
+                <span>Updated Simba VAT (<span id="calcNewRateLabel">21%</span>):</span>
+                <strong id="calcNewVat">£2,100.00</strong>
+              </div>
+              <div class="simba__calc-row simba__calc-row--total">
+                <span>Total Compliant Settlement:</span>
+                <strong id="calcTotal">£12,100.00</strong>
+              </div>
+            </div>
+
+            <div class="simba__pipeline">
+              <div class="simba__step simba__step--success">
+                <span class="simba__step-dot"></span>
+                <div class="simba__step-text">
+                  <strong>1. Business Policy Update</strong>
+                  <p>Tax team updates effective date &amp; rate in rule matrix via UI</p>
+                </div>
+              </div>
+              <div class="simba__step simba__step--success">
+                <span class="simba__step-dot"></span>
+                <div class="simba__step-text">
+                  <strong>2. Instant Point-of-Injection Enforcement</strong>
+                  <p id="simbaSuccessNote">Payables &amp; Receivables validate against new rule in real time; Peppol XML generated automatically</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="simba__status-badge simba__status-badge--success" id="simbaStatusBadge">
+              Status: Instant Policy Sync · Zero Downtime · Peppol Ready
+            </div>
+          </div>
+        </div>
+
+        <div class="simba__demo-footer">
+          <p>
+            <strong>Key Takeaway:</strong> Simba eliminates the operational friction and code releases that cost enterprise finance teams millions during statutory changes. The same configurable methodology forms the cornerstone of Eclectus FinOps' architecture.
+          </p>
+          <a href="#contact" class="btn btn--primary">
+            <span>Discuss Architecture for Your Team</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -534,6 +759,7 @@
             <h4>Services</h4>
             <a href="#methodology">P2P Engineering</a>
             <a href="#methodology">O2C Optimisation</a>
+            <a href="#simba">Simba Demo</a>
             <a href="#audit">E-Invoicing Audit</a>
             <a href="#methodology">VAT Recovery</a>
           </div>

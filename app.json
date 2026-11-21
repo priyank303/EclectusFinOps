@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "EclectusFinOps",
+    "slug": "eclectusfinops",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f6f8fa"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.eclectusfinops.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#f6f8fa"
+      },
+      "package": "com.eclectusfinops.app",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "extra": {
+      "websiteName": "EclectusFinOps",
+      "storeAppName": "EclectusFinOps"
+    }
+  }
+}

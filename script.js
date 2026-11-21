@@ -64,6 +64,7 @@
   const reveals = document.querySelectorAll(
     '.section__eyebrow, .section__heading, .section__lead, .section__body, ' +
     '.methodology__card, .practitioner__pillar, .trust-bar__item, ' +
+    '.simba__card, .simba__demo-box, ' +
     '.cliff__content, .cliff__visual, .audit__card, .contact__form, .contact__info-card, ' +
     '.practitioner__visual, .practitioner__content, .footer__brand, .footer__nav-col'
   );
@@ -165,6 +166,84 @@
       }, 1400);
     });
   }
+
+  // ---- SIMBA DEMO INTERACTIVE SIMULATOR ----
+  const modulePills = document.querySelectorAll('#simbaModuleSelector .simba__pill');
+  const scenarioSelect = document.getElementById('simbaScenario');
+  const customRateGroup = document.getElementById('customRateGroup');
+  const customRateInput = document.getElementById('simbaCustomRate');
+
+  let currentModule = 'p2p';
+
+  const scenarios = {
+    uk_increase: { oldRate: 20, newRate: 21, currency: '£' },
+    de_stimulus: { oldRate: 19, newRate: 16, currency: '€' },
+    fr_reclass:  { oldRate: 20, newRate: 10, currency: '€' },
+    custom:      { oldRate: 20, newRate: 22, currency: '£' }
+  };
+
+  function updateSimbaSimulation() {
+    const scenarioKey = scenarioSelect ? scenarioSelect.value : 'uk_increase';
+    if (customRateGroup) {
+      customRateGroup.style.display = scenarioKey === 'custom' ? 'flex' : 'none';
+    }
+
+    const config = scenarios[scenarioKey] || scenarios.uk_increase;
+    let oldRate = config.oldRate;
+    let newRate = scenarioKey === 'custom' && customRateInput ? parseFloat(customRateInput.value) || 20 : config.newRate;
+    const cur = config.currency;
+
+    const baseAmount = 10000;
+    const oldVat = baseAmount * (oldRate / 100);
+    const newVat = baseAmount * (newRate / 100);
+    const total = baseAmount + newVat;
+
+    const calcBase = document.getElementById('calcBase');
+    const calcOldRateLabel = document.getElementById('calcOldRateLabel');
+    const calcOldVat = document.getElementById('calcOldVat');
+    const calcNewRateLabel = document.getElementById('calcNewRateLabel');
+    const calcNewVat = document.getElementById('calcNewVat');
+    const calcTotal = document.getElementById('calcTotal');
+
+    const monoRiskNote = document.getElementById('monoRiskNote');
+    const simbaSuccessNote = document.getElementById('simbaSuccessNote');
+    const monoStatusBadge = document.getElementById('monoStatusBadge');
+    const simbaStatusBadge = document.getElementById('simbaStatusBadge');
+
+    if (calcBase) calcBase.textContent = `${cur}${baseAmount.toLocaleString('en-GB', { minimumFractionDigits: 2 })}`;
+    if (calcOldRateLabel) calcOldRateLabel.textContent = `${oldRate}%`;
+    if (calcOldVat) calcOldVat.textContent = `${cur}${oldVat.toLocaleString('en-GB', { minimumFractionDigits: 2 })}`;
+    if (calcNewRateLabel) calcNewRateLabel.textContent = `${newRate}%`;
+    if (calcNewVat) calcNewVat.textContent = `${cur}${newVat.toLocaleString('en-GB', { minimumFractionDigits: 2 })}`;
+    if (calcTotal) calcTotal.textContent = `${cur}${total.toLocaleString('en-GB', { minimumFractionDigits: 2 })}`;
+
+    if (currentModule === 'p2p') {
+      if (monoRiskNote) monoRiskNote.textContent = 'Suppliers submit AP invoices with the new rate; hardcoded 3-way match fails, throwing invoices into manual dispute queues.';
+      if (simbaSuccessNote) simbaSuccessNote.textContent = 'Supplier AP invoices ingested via Peppol/EDI match the dynamic policy matrix instantly with zero hold-ups.';
+      if (monoStatusBadge) monoStatusBadge.textContent = 'Status: AP Matching Pipeline Frozen · Engineering Release Required';
+      if (simbaStatusBadge) simbaStatusBadge.textContent = 'Status: Payables Policy Enforced · 100% 3-Way Match Pass · Peppol Ready';
+    } else {
+      if (monoRiskNote) monoRiskNote.textContent = 'Receivables billing engine generates invoices with outdated tax tables; customers dispute charges and require credit note reissues.';
+      if (simbaSuccessNote) simbaSuccessNote.textContent = 'Billing runs query the live Simba policy engine; all customer invoices and Peppol e-invoices issued at compliant rates.';
+      if (monoStatusBadge) monoStatusBadge.textContent = 'Status: Billing Engine Desynchronized · Credit Note Exposure High';
+      if (simbaStatusBadge) simbaStatusBadge.textContent = 'Status: Receivables Compliant · Real-Time Tax Validation · Zero Invoicing Delays';
+    }
+  }
+
+  if (modulePills && modulePills.length > 0) {
+    modulePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        modulePills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentModule = pill.getAttribute('data-module') || 'p2p';
+        updateSimbaSimulation();
+      });
+    });
+  }
+
+  if (scenarioSelect) scenarioSelect.addEventListener('change', updateSimbaSimulation);
+  if (customRateInput) customRateInput.addEventListener('input', updateSimbaSimulation);
+  updateSimbaSimulation();
 
   // ---- SMOOTH ACTIVE NAV LINKS ----
   const sections = document.querySelectorAll('section[id]');
